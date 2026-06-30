@@ -8,18 +8,33 @@ export default function AboutUsPage() {
       
       <main className="flex-1">
         {/* Banner Section */}
-        <section className="bg-[#5624d0] text-white py-12 md:py-16 px-4 md:px-6 lg:px-8 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_120%,rgba(139,92,246,0.2),transparent_50%)] pointer-events-none" />
-          <div className="max-w-3xl mx-auto relative z-10">
-            <span className="text-xs uppercase font-extrabold tracking-wider text-purple-200 bg-white/10 px-3.5 py-1.5 rounded-full mb-4 inline-block">
-              Who We Are
-            </span>
-            <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-4">
-              About Skill Unbox
-            </h1>
-            <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto">
-              A practical skill development institute committed to transforming learners into industry-ready professionals.
-            </p>
+        <section className="relative overflow-hidden bg-[#eef6ff] px-4 py-10 text-left text-slate-950 md:px-6 md:py-24 lg:px-8">
+          <img
+            src="https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782801336/about_bg_1_cphqkk.webp"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
+          />
+          <div className="relative z-10 mx-auto max-w-[1440px]">
+            <div className="max-w-xl">
+              <span className="text-xs uppercase font-extrabold tracking-wider text-primary bg-white/90 px-3.5 py-1.5 rounded-full mb-4 inline-block shadow-sm">
+                Who We Are
+              </span>
+              <h1 className="text-3xl md:text-5xl font-black tracking-tight mb-4 text-slate-950 md:text-white md:drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]">
+                About Skill Unbox
+              </h1>
+              <p className="text-sm md:text-base text-slate-700 md:text-white/90 max-w-2xl leading-7 md:font-medium md:drop-shadow-[0_2px_12px_rgba(0,0,0,0.32)]">
+                A practical skill development institute committed to transforming learners into industry-ready professionals.
+              </p>
+            </div>
+
+            <div className="mt-8 overflow-hidden rounded-3xl border border-white shadow-xl md:hidden">
+              <img
+                src="https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782801336/about_bg_1_cphqkk.webp"
+                alt="Skill Unbox practical learning environment"
+                className="h-64 w-full object-cover object-right"
+              />
+            </div>
           </div>
         </section>
 
@@ -31,7 +46,7 @@ export default function AboutUsPage() {
             <div className="relative h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
               <div className="absolute inset-0 bg-[#5624d0]/10 z-10" />
               <img 
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" 
                 alt="Students collaborating at Skill Unbox"
                 className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-700"
               />

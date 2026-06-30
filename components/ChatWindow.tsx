@@ -75,8 +75,12 @@ export default function ChatWindow({
 
         {isLoading && (
           <div className="flex items-center gap-3 text-sm text-slate-500">
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy text-xs font-semibold text-white">
-              AI
+            <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-white p-1 shadow-sm">
+              <img
+                src="/logo-square.png"
+                alt="SkillUnbox"
+                className="h-full w-full object-contain"
+              />
             </span>
             <span className="flex gap-1 rounded-2xl border border-slate-200 bg-white px-4 py-3">
               <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:-0.2s]" />

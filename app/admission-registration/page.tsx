@@ -1,8 +1,7 @@
 "use client";
 
 import { Suspense, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { COURSES } from "../../constants/courses";
@@ -28,6 +27,7 @@ const preferredTimes = [
 ];
 
 function AdmissionFormContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const initialCourse = searchParams.get("course") || "";
 
@@ -44,7 +44,6 @@ function AdmissionFormContent() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverError, setServerError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const selectedCourse = useMemo(
     () => COURSES.find((course) => course.slug === formData.courseSlug),
@@ -135,7 +134,7 @@ function AdmissionFormContent() {
         throw new Error(data?.error || "Unable to submit the form.");
       }
 
-      setIsSubmitted(true);
+      router.push("/registrationthanku-page");
     } catch (error) {
       setServerError(
         error instanceof Error
@@ -197,9 +196,7 @@ function AdmissionFormContent() {
       </aside>
 
       <section className="p-5 md:p-8 lg:p-10">
-        {!isSubmitted ? (
-          <>
-            <div className="mb-7">
+        <div className="mb-7">
               <h2 className="text-2xl font-black text-slate-950">
                 Admission Request Form
               </h2>
@@ -371,29 +368,6 @@ function AdmissionFormContent() {
                 {isSubmitting ? "Submitting Registration..." : "Submit Registration"}
               </button>
             </form>
-          </>
-        ) : (
-          <div className="flex min-h-[520px] flex-col items-center justify-center gap-5 text-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-3xl font-black text-emerald-600">
-              ✓
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-950">
-                Registration Submitted
-              </h2>
-              <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
-                Thank you. Your admission request has been sent successfully.
-                Our counselor will contact you soon.
-              </p>
-            </div>
-            <Link
-              href="/courses"
-              className="rounded-xl bg-slate-950 px-6 py-3 text-xs font-bold text-white transition hover:bg-slate-800"
-            >
-              Explore Courses
-            </Link>
-          </div>
-        )}
       </section>
     </div>
   );

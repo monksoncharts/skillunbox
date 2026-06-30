@@ -119,8 +119,15 @@ export default function ContactPage() {
       <Navbar />
 
       <main className="flex-1">
-        <section className="relative overflow-hidden bg-primary px-4 py-12 text-center text-white md:px-6 md:py-16 lg:px-8">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_120%,rgba(0,180,255,0.26),transparent_48%)]" />
+        <section
+          className="relative overflow-hidden bg-slate-950 px-4 py-14 text-center text-white md:px-6 md:py-20 lg:px-8"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(15,23,42,0.9), rgba(0,102,255,0.68)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1400&auto=format&fit=crop')",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="relative z-10 mx-auto max-w-3xl">
             <span className="mb-4 inline-block rounded-full bg-white/10 px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-wider text-white/80">
               Get in Touch

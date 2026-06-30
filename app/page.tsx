@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import TrendingCourses from "../components/TrendingCourses";
 import WhyChooseUs from "../components/WhyChooseUs";
+import TestimonialsSection from "../components/TestimonialsSection";
 import FAQSection from "../components/FAQSection";
 import Footer from "../components/Footer";
 
@@ -71,6 +72,9 @@ export default function Home() {
 
           </div>
         </section>
+
+        {/* Student Testimonials */}
+        <TestimonialsSection />
 
         {/* FAQ Accordions */}
         <FAQSection />

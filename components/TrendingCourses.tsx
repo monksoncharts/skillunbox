@@ -3,26 +3,6 @@
 import Link from "next/link";
 import { COURSES } from "../constants/courses";
 
-// Map gradient headers based on course id
-const getHeaderGradient = (id: string) => {
-  switch (id) {
-    case "digital-marketing":
-      return "from-[#ff4e50] to-[#f9d423]"; // Digital Marketing - Pink/Yellow
-    case "video-editing":
-      return "from-[#f2994a] to-[#f2c94c]"; // Video Editing - Golden
-    case "graphic-design":
-      return "from-[#667eea] to-[#764ba2]"; // Graphic Design - Purple
-    case "web-development":
-      return "from-[#4568dc] to-[#b06ab3]"; // Web Dev - Purple Blue
-    case "ai-automation":
-      return "from-[#f093fb] to-[#f5576c]"; // AI Automation - Pink/Red
-    case "media-production":
-      return "from-[#11998e] to-[#38ef7d]"; // Media Production - Teal/Green
-    default:
-      return "from-purple-500 to-indigo-500";
-  }
-};
-
 export default function TrendingCourses() {
   return (
     <section id="courses" className="w-full bg-white py-16 md:py-24 px-4 md:px-6 lg:px-8" aria-labelledby="courses-heading">
@@ -48,23 +28,16 @@ export default function TrendingCourses() {
               key={course.id}
               className="group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 focus-within:ring-2 focus-within:ring-[#5624d0]"
             >
-              {/* Card Header Gradient */}
-              <div
-                className={`relative h-48 w-full bg-gradient-to-br ${getHeaderGradient(
-                  course.id
-                )} flex flex-col justify-between p-5 text-white`}
-              >
-                {/* Decorative overlay */}
-                <div className="absolute inset-0 bg-black/10 opacity-40 mix-blend-overlay pointer-events-none" />
+              {/* Card Header Image */}
+              <div className="relative flex h-48 w-full flex-col justify-between overflow-hidden p-5 text-white">
+                <img
+                  src={course.imageUrl}
+                  alt={`${course.title} course cover`}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-slate-950/10" />
                 
-                {/* Floating Badge */}
-                <div className="z-10 self-start">
-                  {course.badge && (
-                    <span className="bg-white/90 text-gray-900 backdrop-blur-sm text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
-                      {course.badge}
-                    </span>
-                  )}
-                </div>
+                <div />
 
                 {/* Rating badge & Skills */}
                 <div className="z-10">
@@ -87,9 +60,9 @@ export default function TrendingCourses() {
               </div>
 
               {/* Card Contents */}
-              <div className="flex-1 p-6 flex flex-col justify-between">
+              <div className="flex-1 p-5 flex flex-col">
                 <div>
-                  <h4 className="text-[19px] font-bold text-gray-900 leading-snug group-hover:text-[#5624d0] transition-colors mb-2">
+                  <h4 className="text-[18px] font-bold text-gray-900 leading-snug group-hover:text-[#5624d0] transition-colors mb-2">
                     <Link
                       href={`/courses/${course.slug}`}
                       className="focus:outline-none focus:underline"
@@ -97,7 +70,7 @@ export default function TrendingCourses() {
                       {course.title}
                     </Link>
                   </h4>
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <div className="flex flex-wrap items-center gap-2 mb-2.5">
                     <span className="text-[11px] text-gray-400 font-semibold uppercase tracking-wider">
                       {course.instructor}
                     </span>
@@ -106,14 +79,14 @@ export default function TrendingCourses() {
                       Offline
                     </span>
                   </div>
-                  <p className="text-gray-600 text-xs leading-relaxed mb-4 line-clamp-2">
+                  <p className="text-gray-600 text-xs leading-relaxed line-clamp-2">
                     {course.overview}
                   </p>
                 </div>
 
                 {/* Bottom section: Rating, Price and CTAs */}
-                <div>
-                  <div className="border-t border-gray-100 pt-4 mb-4 flex items-center justify-between">
+                <div className="mt-4">
+                  <div className="border-t border-gray-100 pt-3 mb-3 flex items-center">
                     {/* Rating */}
                     <div className="flex items-center gap-1">
                       <span className="text-sm font-extrabold text-gray-900">{course.rating}</span>

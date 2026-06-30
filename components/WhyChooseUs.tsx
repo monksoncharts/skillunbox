@@ -147,8 +147,8 @@ export default function WhyChooseUs() {
           <div className="relative z-10 grid grid-cols-1 items-stretch gap-5 rounded-[1.75rem] bg-white p-4 shadow-xl ring-1 ring-slate-200 md:grid-cols-[1fr_1fr] md:gap-6 md:p-6 lg:grid-cols-[1.04fr_1fr]">
             <div className="relative min-h-[360px] overflow-hidden rounded-2xl bg-primary-light md:min-h-full">
               <Image
-                src="https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782724448/ChatGPT_Image_Jun_29_2026_02_43_16_PM_g7rtkd.webp"
-                alt="Skill Unbox practical learning"
+                src="/images/why-us-girl-student.png"
+                alt="Skill Unbox girl student learning with practical technology tools"
                 fill
                 sizes="(max-width: 768px) 100vw, 48vw"
                 className="object-cover object-bottom"

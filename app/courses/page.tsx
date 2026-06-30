@@ -9,8 +9,15 @@ export default function CoursesPage() {
       
       <main className="flex-1">
         {/* Course Header Banner */}
-        <section className="bg-[#5624d0] text-white py-12 md:py-16 px-4 md:px-6 lg:px-8 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_120%,rgba(139,92,246,0.2),transparent_50%)] pointer-events-none" />
+        <section
+          className="relative overflow-hidden bg-slate-950 px-4 py-14 text-center text-white md:px-6 md:py-20 lg:px-8"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(15,23,42,0.92), rgba(37,99,235,0.72)), url('https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782801050/course_cover_img_6_gsetzj.webp')",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="max-w-3xl mx-auto relative z-10">
             <span className="text-xs uppercase font-extrabold tracking-wider text-purple-200 bg-white/10 px-3.5 py-1.5 rounded-full mb-4 inline-block">
               Skill Unbox Programs
