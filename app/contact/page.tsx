@@ -154,7 +154,7 @@ export default function ContactPage() {
                   <>
                     H.N 120, Joshi Khola, New ITI Near Dhanmil,
                     <br />
-                    Haldwani, Uttarakhand, India.
+                    Haldwani, Uttarakhand, India
                   </>
                 }
                 iconPath="M17.657 16.657 13.414 20.9a2 2 0 0 1-2.828 0l-4.243-4.243a8 8 0 1 1 11.314 0Z M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
