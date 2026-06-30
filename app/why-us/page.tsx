@@ -11,7 +11,7 @@ export default function WhyUsPage() {
         {/* Banner Section */}
         <section className="relative overflow-hidden bg-[#f3f0ff] px-4 py-10 text-left text-slate-950 md:px-6 md:py-24 lg:px-8">
           <img
-            src="https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782724448/ChatGPT_Image_Jun_29_2026_02_43_16_PM_g7rtkd.webp"
+            src="/images/why-us-hero-collaboration.png"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 hidden h-full w-full object-cover object-center md:block"
@@ -21,17 +21,17 @@ export default function WhyUsPage() {
               <span className="mb-4 inline-block rounded-full bg-white/75 px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-wider text-primary shadow-sm">
                 Our Methodology
               </span>
-              <h1 className="mb-4 text-3xl font-black tracking-tight md:text-5xl">
+              <h1 className="mb-4 text-3xl font-black tracking-tight text-slate-950 md:text-5xl md:text-white md:drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]">
                 Why Learn With Skill Unbox?
               </h1>
-              <p className="max-w-2xl text-sm leading-7 text-slate-700 md:text-base">
+              <p className="max-w-2xl text-sm leading-7 text-slate-700 md:text-base md:font-medium md:text-white/90 md:drop-shadow-[0_2px_12px_rgba(0,0,0,0.32)]">
                 We focus on practical, job-oriented training that builds confidence and prepares you for real industry environments.
               </p>
             </div>
 
             <div className="mt-8 overflow-hidden rounded-3xl border border-white shadow-xl md:hidden">
               <img
-                src="https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782724448/ChatGPT_Image_Jun_29_2026_02_43_16_PM_g7rtkd.webp"
+                src="/images/why-us-hero-collaboration.png"
                 alt="Skill Unbox practical learning benefits"
                 className="h-64 w-full object-cover object-center"
               />
