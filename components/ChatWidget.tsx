@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import ChatInput from "@/components/ChatInput";
 import ChatWindow from "@/components/ChatWindow";
 import type {
@@ -10,6 +11,7 @@ import type {
 } from "@/types/chat";
 
 export default function ChatWidget() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -91,6 +93,10 @@ export default function ChatWidget() {
     }
 
     void sendMessage(lastMessage);
+  }
+
+  if (pathname.startsWith("/landing-pages")) {
+    return null;
   }
 
   return (

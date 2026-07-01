@@ -171,10 +171,10 @@ export default function ContactPage() {
                 title="Email Details"
                 body={
                   <a
-                    href="mailto:officialskillunbox@gmail.com"
+                    href="mailto:learning@skillunbox.io"
                     className="font-semibold text-primary hover:underline"
                   >
-                    officialskillunbox@gmail.com
+                    learning@skillunbox.io
                   </a>
                 }
                 iconPath="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8 M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"

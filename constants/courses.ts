@@ -5,7 +5,7 @@ export const COURSES: Course[] = [
     id: "digital-marketing",
     slug: "digital-marketing-mastery",
     title: "Digital Marketing Mastery Program",
-    instructor: "SkillUnbox Expert Mentors",
+    instructor: "Marketing Expert Mentors",
     provider: "Skill Unbox",
     imageUrl: "https://res.cloudinary.com/dqaqxw8w8/image/upload/v1782801050/course_cover_img_3_wtjsgx.webp",
     badge: "Bestseller",

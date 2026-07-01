@@ -136,6 +136,21 @@ function renderInlineMarkdown(content: string, isUser: boolean) {
 
   return parts.map((part, index) => {
     if (part.startsWith("`") && part.endsWith("`")) {
+      const codeContent = part.slice(1, -1);
+
+      if (isLinkableToken(codeContent)) {
+        return (
+          <span
+            key={`${part}-${index}`}
+            className={`rounded px-1.5 py-0.5 font-mono text-xs ${
+              isUser ? "bg-white/15 text-white" : "bg-slate-100 text-slate-900"
+            }`}
+          >
+            {renderLinkedText(codeContent, isUser, `${part}-${index}`)}
+          </span>
+        );
+      }
+
       return (
         <code
           key={`${part}-${index}`}
@@ -143,15 +158,89 @@ function renderInlineMarkdown(content: string, isUser: boolean) {
             isUser ? "bg-white/15 text-white" : "bg-slate-100 text-slate-900"
           }`}
         >
-          {part.slice(1, -1)}
+          {codeContent}
         </code>
       );
     }
 
     if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
+      return (
+        <strong key={`${part}-${index}`}>
+          {renderLinkedText(part.slice(2, -2), isUser, `${part}-${index}`)}
+        </strong>
+      );
     }
 
-    return <span key={`${part}-${index}`}>{part}</span>;
+    return (
+      <span key={`${part}-${index}`}>
+        {renderLinkedText(part, isUser, `${part}-${index}`)}
+      </span>
+    );
+  });
+}
+
+function isLinkableToken(text: string) {
+  return (
+    /^https?:\/\//.test(text) ||
+    /^\/(?:courses|contact|about-us|why-us|admission-registration|registrationthanku-page)(?:\/[^\s.,)]*)?$/.test(
+      text,
+    ) ||
+    /^\+91[\s-]?\d{5}[\s-]?\d{5}$/.test(text)
+  );
+}
+
+function renderLinkedText(text: string, isUser: boolean, keyPrefix: string) {
+  const linkPattern =
+    /(https?:\/\/[^\s)]+|\/(?:courses|contact|about-us|why-us|admission-registration|registrationthanku-page)(?:\/[^\s.,)]*)?|\+91[\s-]?\d{5}[\s-]?\d{5})/g;
+  const parts = text.split(linkPattern);
+  const linkClassName = isUser
+    ? "font-semibold underline decoration-white/60 underline-offset-4 hover:decoration-white"
+    : "font-semibold text-primary underline decoration-primary/35 underline-offset-4 hover:decoration-primary";
+
+  return parts.map((part, index) => {
+    if (!part) {
+      return null;
+    }
+
+    if (/^https?:\/\//.test(part)) {
+      return (
+        <a
+          key={`${keyPrefix}-url-${index}`}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClassName}
+        >
+          {part}
+        </a>
+      );
+    }
+
+    if (part.startsWith("/")) {
+      return (
+        <a key={`${keyPrefix}-route-${index}`} href={part} className={linkClassName}>
+          {part}
+        </a>
+      );
+    }
+
+    if (/^\+91/.test(part)) {
+      const digits = part.replace(/\D/g, "");
+      const nationalNumber = digits.slice(-10);
+
+      return (
+        <a
+          key={`${keyPrefix}-phone-${index}`}
+          href={`https://wa.me/91${nationalNumber}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClassName}
+        >
+          {part}
+        </a>
+      );
+    }
+
+    return part;
   });
 }

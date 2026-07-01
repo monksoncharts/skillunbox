@@ -32,3 +32,35 @@ body {
     linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
+@keyframes landing-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes landing-soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.landing-animate-up {
+  animation: landing-fade-up 680ms ease both;
+}
+
+.landing-animate-up-delay {
+  animation: landing-fade-up 780ms ease 120ms both;
+}
+
+.landing-float {
+  animation: landing-soft-float 5s ease-in-out infinite;
+}

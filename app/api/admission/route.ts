@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { COURSES } from "@/constants/courses";
 
-const N8N_WEBHOOK_URL =
+const DEFAULT_N8N_WEBHOOK_URL =
   "https://n8n.gauravsinghbisht.site/webhook/e81ae2da-7d76-496f-b019-3b779b5e94ae";
+const DIGITAL_MARKETING_LANDING_WEBHOOK_URL =
+  "https://n8n.gauravsinghbisht.site/webhook/9bb3b60f-a25d-4753-a265-a19d1c84b408";
 
 const courseSlugs = COURSES.map((course) => course.slug);
 
@@ -19,9 +21,11 @@ const admissionSchema = z.object({
   courseSlug: z.string().trim().refine((slug) => courseSlugs.includes(slug), {
     message: "Please select a valid course.",
   }),
+  education: z.string().trim().max(120).optional(),
   mode: z.enum(["offline", "online"]),
-  preferredTime: z.string().trim().min(1, "Please select a preferred time."),
+  preferredTime: z.string().trim().min(1, "Please select a preferred time.").optional(),
   comments: z.string().trim().max(600).optional(),
+  sourcePage: z.string().trim().max(80).optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -42,18 +46,27 @@ export async function POST(request: NextRequest) {
     const selectedCourse = COURSES.find(
       (course) => course.slug === parsed.data.courseSlug,
     );
+    const isDigitalMarketingLanding =
+      parsed.data.sourcePage === "digital-marketing-landing" &&
+      parsed.data.courseSlug === "digital-marketing-mastery";
+    const webhookUrl = isDigitalMarketingLanding
+      ? DIGITAL_MARKETING_LANDING_WEBHOOK_URL
+      : DEFAULT_N8N_WEBHOOK_URL;
 
     const payload = {
       ...parsed.data,
       phone: parsed.data.phone.replace(/\s+/g, " "),
+      education: parsed.data.education || "",
       comments: parsed.data.comments || "",
       courseTitle: selectedCourse?.title || parsed.data.courseSlug,
-      source: "SkillUnbox admission registration page",
+      source: isDigitalMarketingLanding
+        ? "SkillUnbox digital marketing landing page"
+        : "SkillUnbox admission registration page",
       submittedAt: new Date().toISOString(),
       userAgent: request.headers.get("user-agent") || "",
     };
 
-    const webhookResponse = await fetch(N8N_WEBHOOK_URL, {
+    const webhookResponse = await fetch(webhookUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
