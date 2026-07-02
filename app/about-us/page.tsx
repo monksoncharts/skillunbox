@@ -120,7 +120,7 @@ export default function AboutUsPage() {
               <div className="mt-6 space-y-5 text-sm leading-7 text-slate-600">
                 <p>
                   Mr. Lalit Bashera is the driving force behind Skill Unbox.
-                  With over 10 years of experience in the Digital Marketing
+                  With over 10 years of experience in the Marketing
                   industry, he has helped train and mentor numerous students
                   while working on a wide range of real-world projects.
                 </p>
