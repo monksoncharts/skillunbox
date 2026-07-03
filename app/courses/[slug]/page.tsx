@@ -231,7 +231,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
-                  <span className="font-semibold text-violet-400">Offline &amp; Online Study Modes</span>
+                  <span className="font-semibold text-violet-400">Online &amp; Offline Study Modes</span>
                 </div>
               </div>
 
@@ -340,6 +340,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   <li>No programming or visual designing experience is required. We start from absolute scratch!</li>
                   <li>A computer or laptop with access to the internet (Windows or macOS).</li>
                   <li>All software tools used in this course will be free or provided during classes.</li>
+                  <li>All courses are available in both online and offline mode.</li>
                 </ul>
               </div>
 
@@ -348,10 +349,10 @@ export default function CourseDetailPage({ params }: PageProps) {
                 <h2 className="text-xl font-extrabold text-[#1c1d1f] mb-4">Description</h2>
                 <div className="text-xs md:text-sm text-[#2d2f31] leading-relaxed space-y-4">
                   <p>
-                    Welcome to the **{course.title}**, the only course you need to learn, build, and master these in-demand practical skills. Designed specifically for job hunters, freelancers, and students looking for internship placement support.
+                    Welcome to the <strong>{course.title}</strong>, the only course you need to learn, build, and master these in-demand practical skills. Designed specifically for job hunters, freelancers, and students looking for internship placement support.
                   </p>
                   <p>
-                    Unlike standard tutorial series online, we structure each section around live assignments and portfolio-building projects. You will get access to regular counselor sessions, WhatsApp guidance groups, and offline studio coordinates to check your tasks in-person.
+                    Unlike standard tutorial series online, we structure each section around live assignments and portfolio-building projects. Every SkillUnbox course is available in both online and offline mode, with counselor sessions, WhatsApp guidance groups, and studio support for in-person task reviews.
                   </p>
                   <p className="font-bold">
                     Why is this course the perfect fit for you?
@@ -359,7 +360,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   <ul className="list-disc pl-5 space-y-1.5">
                     <li>1-on-1 mentorship with industry experts from Delhi/NCR & Bangalore agencies.</li>
                     <li>Syllabus modeled completely around modern agency job descriptions.</li>
-                    <li>Interactive classes with hybrid support (offline studio + live zoom backings).</li>
+                    <li>Interactive classes with hybrid support through offline studio sessions and online live classes.</li>
                     <li>Portfolio review certificates upon completing your capstone shoots or code.</li>
                   </ul>
                 </div>
@@ -503,7 +504,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                         <svg className="w-4 h-4 text-gray-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
-                        <span>Offline (Studio Campus) &amp; Online Live Classes</span>
+                        <span>Online &amp; Offline Live Classes</span>
                       </li>
 
                     </ul>

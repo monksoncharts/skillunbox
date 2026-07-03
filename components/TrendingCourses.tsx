@@ -5,11 +5,17 @@ import { COURSES } from "../constants/courses";
 
 export default function TrendingCourses() {
   return (
-    <section id="courses" className="w-full bg-white py-16 md:py-24 px-4 md:px-6 lg:px-8" aria-labelledby="courses-heading">
+    <section
+      id="courses"
+      className="w-full bg-white py-16 md:py-24 px-4 md:px-6 lg:px-8"
+      aria-labelledby="courses-heading"
+    >
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <h2 className="text-xs uppercase font-extrabold tracking-wider text-[#5624d0] mb-3">Our Courses</h2>
+            <h2 className="text-xs uppercase font-extrabold tracking-wider text-[#5624d0] mb-3">
+              Our Courses
+            </h2>
             <h3
               id="courses-heading"
               className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight"
@@ -18,7 +24,9 @@ export default function TrendingCourses() {
             </h3>
           </div>
           <p className="mt-4 md:mt-0 text-gray-500 text-sm max-w-md">
-            Learn live and get personalized mentorship in digital marketing, full-stack programming, media, visual arts, and generative AI.
+            Learn live and get personalized mentorship in digital marketing,
+            full-stack programming, media, visual arts, and generative AI. All
+            courses are available in online and offline mode.
           </p>
         </div>
 
@@ -36,7 +44,7 @@ export default function TrendingCourses() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-slate-950/10" />
-                
+
                 <div />
 
                 {/* Rating badge & Skills */}
@@ -71,13 +79,9 @@ export default function TrendingCourses() {
                     </Link>
                   </h4>
                   <div className="flex flex-wrap items-center gap-2 mb-2.5">
-                    <span className="text-[11px] text-gray-400 font-semibold uppercase tracking-wider">
+                    {/* <span className="text-[11px] text-gray-400 font-semibold uppercase tracking-wider">
                       {course.instructor}
-                    </span>
-                    <span className="h-1 w-1 bg-gray-300 rounded-full hidden sm:block"></span>
-                    <span className="text-[9px] font-extrabold text-violet-600 bg-violet-50 border border-violet-100 px-2 py-0.5 rounded-full uppercase tracking-wider">
-                      Offline
-                    </span>
+                    </span> */}
                   </div>
                   <p className="text-gray-600 text-xs leading-relaxed line-clamp-2">
                     {course.overview}
@@ -86,16 +90,28 @@ export default function TrendingCourses() {
 
                 {/* Bottom section: Rating, Price and CTAs */}
                 <div className="mt-4">
-                  <div className="border-t border-gray-100 pt-3 mb-3 flex items-center">
+                  <div className="border-t border-gray-100 pt-3 mb-3 flex items-center justify-between gap-2 flex-wrap text-gray-500 text-xs">
                     {/* Rating */}
                     <div className="flex items-center gap-1">
-                      <span className="text-sm font-extrabold text-gray-900">{course.rating}</span>
-                      <svg className="w-4 h-4 text-amber-500 fill-current" viewBox="0 0 20 20">
+                      <span className="text-sm font-extrabold text-gray-900">
+                        {course.rating}
+                      </span>
+                      <svg
+                        className="w-4 h-4 text-amber-500 fill-current"
+                        viewBox="0 0 20 20"
+                      >
                         <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                       </svg>
-                      <span className="text-xs text-gray-400">({course.ratingsCount})</span>
+                      <span className="text-xs text-gray-400">
+                        ({course.ratingsCount})
+                      </span>
                     </div>
-
+                    <div className="flex items-center gap-1">
+                      <span className="h-1 w-1 bg-gray-300 rounded-full hidden sm:block"></span>
+                      <span className="text-[9px] font-extrabold text-violet-600 bg-violet-50 border border-violet-100 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        Online /Offline
+                      </span>
+                    </div>
                   </div>
 
                   {/* Actions */}

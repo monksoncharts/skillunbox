@@ -11,7 +11,10 @@ type LandingFormData = {
   email: string;
   phone: string;
   education: string;
+  mode: StudyMode;
 };
+
+type StudyMode = "offline" | "online";
 
 type CourseLandingPageProps = {
   course: Course;
@@ -29,7 +32,7 @@ const featureCards = [
   },
   {
     title: "Live Support",
-    text: "Mentor guidance and doubt resolution",
+    text: "Mentor guidance in online and offline mode",
     step: "02",
     icon: "M18 10a6 6 0 0 0-12 0v3a2 2 0 0 0 2 2h1v-5H7a5 5 0 0 1 10 0h-2v5h1a2 2 0 0 0 2-2v-3z",
   },
@@ -60,7 +63,7 @@ const faqs = [
     "What is the duration of the digital marketing course?",
     "The course duration is 6 months with a well-structured curriculum, weekly sessions, and practical assignments to ensure hands-on learning.",
   ],
-  ["Are classes live or recorded?", "Classes are live with mentor support, and important learning material is shared for revision."],
+  ["Are classes live or recorded?", "Classes are live with mentor support. All courses are available in online and offline mode, and important learning material is shared for revision."],
   ["Will I get hands-on projects?", "Yes. You will work on campaign planning, ads, SEO tasks, content calendars, reporting, and portfolio projects."],
   ["Do I get a certificate after completion?", "Yes. You receive a SkillUnbox completion certificate after finishing the required modules and projects."],
   ["Is placement support included?", "Yes. Resume guidance, interview preparation, and career support are included."],
@@ -73,6 +76,7 @@ export default function CourseLandingPage({ course }: CourseLandingPageProps) {
     email: "",
     phone: "",
     education: "",
+    mode: "offline",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [serverError, setServerError] = useState("");
@@ -134,7 +138,7 @@ export default function CourseLandingPage({ course }: CourseLandingPageProps) {
           phone: formData.phone.trim(),
           education: formData.education.trim(),
           courseSlug: course.slug,
-          mode: "offline",
+          mode: formData.mode,
           comments: `Landing page enrollment for ${course.title}`,
           sourcePage: "digital-marketing-landing",
         }),
@@ -505,7 +509,7 @@ export default function CourseLandingPage({ course }: CourseLandingPageProps) {
               </h2>
               <p className="mt-4 text-sm font-medium leading-7 text-slate-300">
                 Fill your details and our team will contact you with batch,
-                fee, curriculum, and admission guidance.
+                fee, curriculum, online/offline mode, and admission guidance.
               </p>
             </div>
 
@@ -556,6 +560,26 @@ export default function CourseLandingPage({ course }: CourseLandingPageProps) {
                 </FormField>
               </div>
 
+              <div className="mt-4">
+                <p className="mb-2 text-[11px] font-black uppercase tracking-wider text-slate-600">
+                  Select Mode of Study
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <StudyModeOption
+                    label="Offline"
+                    description="Haldwani campus"
+                    checked={formData.mode === "offline"}
+                    onChange={() => setFormData({ ...formData, mode: "offline" })}
+                  />
+                  <StudyModeOption
+                    label="Online"
+                    description="Live classes"
+                    checked={formData.mode === "online"}
+                    onChange={() => setFormData({ ...formData, mode: "online" })}
+                  />
+                </div>
+              </div>
+
               {serverError && (
                 <div className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">
                   {serverError}
@@ -601,6 +625,40 @@ function FormField({
       {children}
       {error && <p className="mt-1 text-[11px] font-bold text-red-500">{error}</p>}
     </div>
+  );
+}
+
+function StudyModeOption({
+  label,
+  description,
+  checked,
+  onChange,
+}: {
+  label: string;
+  description: string;
+  checked: boolean;
+  onChange: () => void;
+}) {
+  return (
+    <label
+      className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 transition ${
+        checked
+          ? "border-primary bg-primary-light text-primary"
+          : "border-slate-200 bg-white text-slate-700 hover:border-primary-border"
+      }`}
+    >
+      <input
+        type="radio"
+        name="landing-study-mode"
+        checked={checked}
+        onChange={onChange}
+        className="text-primary focus:ring-primary"
+      />
+      <span>
+        <span className="block text-sm font-black text-slate-950">{label}</span>
+        <span className="block text-xs text-slate-500">{description}</span>
+      </span>
+    </label>
   );
 }
 

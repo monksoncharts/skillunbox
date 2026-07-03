@@ -26,7 +26,7 @@ export default function CoursesPage() {
               Explore Our Professional Courses
             </h1>
             <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto">
-              Choose from our curated selection of job-oriented and practical training programs, designed to make you industry-ready.
+              Choose from our curated selection of job-oriented and practical training programs. All courses are available in online and offline mode.
             </p>
           </div>
         </section>

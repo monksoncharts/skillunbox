@@ -167,7 +167,7 @@ function AdmissionFormContent() {
           <div className="grid gap-3 text-sm">
             {[
               "Personal counselor callback",
-              "Offline Haldwani campus and online live class options",
+              "All courses available in online and offline mode",
               "Course selection support based on your goal",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">

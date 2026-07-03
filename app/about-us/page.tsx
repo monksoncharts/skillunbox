@@ -41,8 +41,8 @@ export default function AboutUsPage() {
               <span className="mb-4 inline-block rounded-full bg-white/90 px-4 py-2 text-xs font-extrabold uppercase tracking-wider text-primary shadow-sm">
                 About Skill Unbox
               </span>
-              <h1 className="text-4xl font-black tracking-tight text-slate-950 md:text-6xl md:text-white md:drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]">
-                Skills That Make You Employable
+              <h1 className="text-4xl font-black tracking-tight text-slate-950 md:text-5xl md:text-white md:drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]">
+                Learn With Execution..
               </h1>
               <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-700 md:text-base md:font-medium md:text-white/90 md:drop-shadow-[0_2px_12px_rgba(0,0,0,0.32)]">
                 At Skill Unbox, we believe that while a degree is important,
@@ -52,65 +52,68 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1200px] px-4 py-14 md:px-6 md:py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <div className="overflow-hidden rounded-3xl border border-slate-100 shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=900&auto=format&fit=crop"
-                alt="Students collaborating at Skill Unbox"
-                className="h-[340px] w-full object-cover md:h-[520px]"
-              />
-            </div>
-
-            <div>
+        <section className="mx-auto max-w-[1200px] px-4 py-12 md:px-6 md:py-16 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+            <article>
               <p className="text-xs font-black uppercase tracking-[0.25em] text-primary">
-                Our Vision
+                About Skill Unbox
               </p>
               <h2 className="mt-3 text-3xl font-black leading-tight text-slate-950 md:text-4xl">
-                Bridging the gap between education and industry.
+                Practical skills that make you employable.
               </h2>
-
-              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-600">
+              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-600 md:text-base">
                 <p>
-                  In today&apos;s competitive world, companies do not just look
-                  for qualifications. They look for people who can deliver
+                  At Skill Unbox, we believe that while a degree is important,
+                  <strong className="text-slate-950"> it&apos;s your skills that make you employable</strong>.
+                  In today&apos;s competitive world, companies don&apos;t just
+                  look for qualifications, they look for people who can deliver
                   results from day one.
                 </p>
                 <p>
                   Our vision is to bridge the gap between education and
                   industry by offering practical, job-oriented training that
-                  prepares students for real careers.
+                  prepares students for real careers. We focus on hands-on
+                  learning, real-world exposure, and industry-relevant skills
+                  that help students become confident professionals.
                 </p>
                 <p>
-                  We focus on hands-on learning, real-world exposure, and
-                  industry-relevant skills that help students become confident
-                  professionals.
+                  At Skill Unbox, learning goes beyond the classroom. Our goal
+                  is to help every student build practical knowledge, industry
+                  experience, and a strong portfolio that leads to meaningful
+                  career opportunities.
                 </p>
               </div>
+            </article>
 
-              <div className="mt-8 rounded-3xl bg-blue-50 p-6">
-                <h3 className="text-lg font-black text-slate-950">
-                  We offer job-ready courses in:
-                </h3>
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {jobReadyCourses.map((course) => (
-                    <div
-                      key={course}
-                      className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-bold text-slate-700 shadow-sm"
-                    >
-                      <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-                      {course}
-                    </div>
-                  ))}
-                </div>
+            <aside className="rounded-3xl bg-blue-50 p-6 ring-1 ring-blue-100 md:p-7">
+              <h3 className="text-lg font-black text-slate-950">
+                We offer job-ready courses in:
+              </h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                {jobReadyCourses.map((course) => (
+                  <div
+                    key={course}
+                    className="flex items-center gap-3 rounded-2xl bg-white px-4 py-3 text-sm font-bold text-slate-700 shadow-sm"
+                  >
+                    <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+                    {course}
+                  </div>
+                ))}
               </div>
-            </div>
+            </aside>
           </div>
         </section>
 
-        <section className="bg-slate-50 px-4 py-14 md:px-6 md:py-20 lg:px-8">
+        <section className="bg-slate-50 px-4 py-10 md:px-6 md:py-14 lg:px-8">
           <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-2">
-            <article className="rounded-3xl bg-white p-7 shadow-sm md:p-9">
+            <article className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200/70 md:p-8">
+              <div className="mb-7 flex h-[330px] items-end justify-center overflow-hidden rounded-2xl border border-slate-100 bg-slate-100 px-4 pt-4 md:h-[380px]">
+                <img
+                  src="https://res.cloudinary.com/dqaqxw8w8/image/upload/v1783069753/Untitled_design_-_2026-07-03T143007.713_fyr7zt.webp"
+                  alt="Mr. Lalit Bashera, founder of Skill Unbox"
+                  className="h-full w-full object-contain object-bottom"
+                />
+              </div>
               <p className="text-xs font-black uppercase tracking-[0.25em] text-primary">
                 Meet Our Founder
               </p>
@@ -119,14 +122,17 @@ export default function AboutUsPage() {
               </h2>
               <div className="mt-6 space-y-5 text-sm leading-7 text-slate-600">
                 <p>
-                  Mr. Lalit Bashera is the driving force behind Skill Unbox.
-                  With over 10 years of experience in the Marketing
-                  industry, he has helped train and mentor numerous students
-                  while working on a wide range of real-world projects.
+                  <strong className="text-slate-950">Mr. Lalit Bashera</strong> is
+                  the driving force behind Skill Unbox. With over{" "}
+                  <strong className="text-slate-950">
+                    10 years of experience in the  Marketing industry,
+                  </strong>
+                  {" "}he has helped train and mentor numerous students while
+                  working on a wide range of real-world projects.
                 </p>
                 <p>
                   His vision is simple: to create a learning environment where
-                  students do not just earn certificates but become truly
+                  students don&apos;t just earn certificates but become truly
                   job-ready professionals.
                 </p>
                 <p>
@@ -147,24 +153,27 @@ export default function AboutUsPage() {
                 Learn While You Work
               </p>
               <h2 className="mt-3 text-3xl font-black">
-                Learn on live projects with industry professionals.
+                Learn While You Work on Live Projects
               </h2>
               <div className="mt-6 space-y-5 text-sm leading-7 text-slate-300">
                 <p>
-                  At Skill Unbox, learning does not stop with lectures. From
-                  the beginning of your journey, you get the opportunity to
-                  work on live projects alongside experienced industry
-                  professionals.
+                  At Skill Unbox, learning doesn&apos;t stop with lectures. From
+                  the beginning of your journey, you&apos;ll get the opportunity
+                  to work on <strong className="text-white">live projects</strong>{" "}
+                  alongside experienced industry professionals.
                 </p>
                 <p>
-                  As you learn, you collaborate with experts who have worked
-                  with real clients and businesses, giving you first-hand
+                  As you learn, you&apos;ll collaborate with experts who have
+                  worked with real clients and businesses, giving you first-hand
                   exposure to professional workflows, industry standards, and
                   practical problem-solving.
                 </p>
               </div>
 
-              <div className="mt-7 grid gap-3">
+              <p className="mt-7 text-sm font-black text-white">
+                This unique approach helps you:
+              </p>
+              <div className="mt-4 grid gap-3">
                 {liveProjectBenefits.map((benefit) => (
                   <div key={benefit} className="flex items-start gap-3">
                     <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-[10px] font-black">
@@ -176,13 +185,14 @@ export default function AboutUsPage() {
               </div>
 
               <p className="mt-7 rounded-2xl bg-white/10 p-5 text-sm font-bold leading-7 text-white">
-                By the time you complete your course, you will not just have
-                knowledge. You will have real work experience that sets you
+                By the time you complete your course, you won&apos;t just have
+                knowledge. You&apos;ll have real work experience that sets you
                 apart in the job market.
               </p>
             </article>
           </div>
         </section>
+
       </main>
 
       <Footer />
