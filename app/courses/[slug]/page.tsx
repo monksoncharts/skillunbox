@@ -354,18 +354,9 @@ export default function CourseDetailPage({ params }: PageProps) {
                   <p>
                     Unlike standard tutorial series online, we structure each section around live assignments and portfolio-building projects. Every SkillUnbox course is available in both online and offline mode, with counselor sessions, WhatsApp guidance groups, and studio support for in-person task reviews.
                   </p>
-                  <p className="font-bold">
-                    Why is this course the perfect fit for you?
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1.5">
-                    <li>1-on-1 mentorship with industry experts from Delhi/NCR & Bangalore agencies.</li>
-                    <li>Syllabus modeled completely around modern agency job descriptions.</li>
-                    <li>Interactive classes with hybrid support through offline studio sessions and online live classes.</li>
-                    <li>Portfolio review certificates upon completing your capstone shoots or code.</li>
-                  </ul>
+                
                 </div>
               </div>
-
               {/* Career Opportunities with specific SVGs */}
               <div>
                 <h2 className="text-xl font-extrabold text-[#1c1d1f] mb-4">Featured Career Paths</h2>
