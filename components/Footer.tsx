@@ -62,6 +62,7 @@ export default function Footer() {
                 { name: "Explore Courses", path: "/courses" },
                 { name: "Why Skill Unbox", path: "/why-us" },
                 { name: "About Us", path: "/about-us" },
+                { name: "Privacy Policy", path: "/privacy-policy" },
                 { name: "Register Now", path: "/admission-registration" },
               ].map((link) => (
                 <li key={link.name}>
