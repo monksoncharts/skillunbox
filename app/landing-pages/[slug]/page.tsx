@@ -22,12 +22,20 @@ export async function generateMetadata({
   if (!course) {
     return {
       title: "Course Landing Page | SkillUnbox",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   return {
     title: `${course.title} Landing Page | SkillUnbox`,
     description: course.overview,
+    robots: {
+      index: false,
+      follow: false,
+    },
   };
 }
 

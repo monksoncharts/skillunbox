@@ -1,6 +1,15 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+
+export const metadata: Metadata = {
+  title: "Registration Complete | SkillUnbox",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function RegistrationThankYouPage() {
   return (
