@@ -5,6 +5,7 @@ import { COURSES } from "../../../constants/courses";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface PageProps {
@@ -36,6 +37,8 @@ export default function CourseDetailPage({ params }: PageProps) {
         return "from-[#f093fb] to-[#f5576c]";
       case "media-production":
         return "from-[#11998e] to-[#38ef7d]";
+      case "performance-marketing":
+        return "from-[#0052d4] via-[#4364f7] to-[#6fb1fc]";
       default:
         return "from-violet-600 to-indigo-700";
     }
@@ -56,6 +59,8 @@ export default function CourseDetailPage({ params }: PageProps) {
         return "border-pink-500/70 shadow-pink-500/10";
       case "media-production":
         return "border-emerald-500/70 shadow-emerald-500/10";
+      case "performance-marketing":
+        return "border-blue-500/70 shadow-blue-500/10";
       default:
         return "border-violet-500/70 shadow-violet-500/10";
     }
@@ -337,10 +342,9 @@ export default function CourseDetailPage({ params }: PageProps) {
               <div className="mb-8">
                 <h2 className="text-xl font-extrabold text-[#1c1d1f] mb-4">Requirements</h2>
                 <ul className="list-disc pl-5 text-xs md:text-sm text-[#2d2f31] space-y-2">
-                  <li>No programming or visual designing experience is required. We start from absolute scratch!</li>
-                  <li>A computer or laptop with access to the internet (Windows or macOS).</li>
-                  <li>All software tools used in this course will be free or provided during classes.</li>
-                  <li>All courses are available in both online and offline mode.</li>
+                  {course.requirements.map((requirement) => (
+                    <li key={requirement}>{requirement}</li>
+                  ))}
                 </ul>
               </div>
 
@@ -377,55 +381,21 @@ export default function CourseDetailPage({ params }: PageProps) {
 
             </div>
 
-            {/* Right Column: Custom Skill Unbox "Studio Pass" Membership Card */}
+            {/* Right Column: Course enrollment card */}
             <div className="order-1 lg:order-2 w-full lg:w-[360px] lg:z-30 lg:px-4">
               <div className="bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden lg:sticky lg:top-24 lg:-mt-[280px] z-30">
                 
-                {/* 1. Skill Unbox Studio Pass (Creative design stub instead of simple video copy) */}
-                <div className="relative p-5 bg-gradient-to-br from-slate-900 via-slate-950 to-purple-950 text-white select-none">
-                  {/* Decorative background grid and neon circles */}
-                  <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-                  <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${getBannerGradient(course.id)} rounded-full blur-2xl opacity-20`} />
-
-                  <div className={`border-2 ${getPassRingColor(course.id)} border-dashed rounded-xl p-4.5 relative overflow-hidden transition-all duration-300 hover:scale-[1.01]`}>
-                    
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-violet-400 border border-violet-400/30 px-2 py-0.5 rounded">
-                        Skill Unbox Studio Pass
-                      </span>
-                      <span className="flex h-2 w-2 relative">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                      </span>
-                    </div>
-
-                    {/* Program Pass Title */}
-                    <h4 className="font-extrabold text-sm tracking-tight leading-snug mb-3 text-white">
-                      {course.title.toUpperCase()}
-                    </h4>
-
-                    {/* Barcode & Serial stamp */}
-                    <div className="flex items-center justify-between border-t border-white/10 pt-3 mt-4">
-                      <div className="flex flex-col gap-0.5">
-                        <span className="text-[8px] text-gray-500 font-bold uppercase">Pass Code</span>
-                        <span className="text-[10px] text-violet-300 font-mono font-bold">
-                          SU-2026-{course.id.substring(0, 4).toUpperCase()}
-                        </span>
-                      </div>
-                      
-                      {/* Barcode representation */}
-                      <div className="flex items-end gap-[1.5px] h-6 bg-white/5 px-2 py-1 rounded">
-                        <span className="w-[1px] h-4 bg-white/70"></span>
-                        <span className="w-[2px] h-4 bg-white/70"></span>
-                        <span className="w-[1px] h-4 bg-white/70"></span>
-                        <span className="w-[3px] h-4 bg-white/70"></span>
-                        <span className="w-[1px] h-4 bg-white/70"></span>
-                        <span className="w-[2px] h-4 bg-white/70"></span>
-                        <span className="w-[1px] h-4 bg-white/70"></span>
-                      </div>
-                    </div>
-
+                {/* 1. Course cover image */}
+                <div className="bg-slate-950 p-4">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-900">
+                    <Image
+                      src={course.imageUrl}
+                      alt={`${course.title} cover`}
+                      fill
+                      sizes="(min-width: 1024px) 328px, 100vw"
+                      className="object-contain"
+                      priority
+                    />
                   </div>
                 </div>
 

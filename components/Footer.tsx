@@ -26,7 +26,7 @@ export default function Footer() {
               Skill Unbox is a professional skill development institute focused on practical, job-oriented training. We help students turn their learning into successful careers.
             </p>
             <div className="text-xs text-gray-400">
-              <span className="font-bold text-white">Tagline:</span> Unbox Skills. Unlock Success.
+              <span className="font-bold text-white"></span> Unbox Skills. Unlock Success.
             </div>
           </div>
 
@@ -41,6 +41,7 @@ export default function Footer() {
                 { name: "Full Stack Web Development", slug: "full-stack-web-development" },
                 { name: "AI Automation & Productivity", slug: "ai-automation-productivity-expert" },
                 { name: "Media Production & Studio", slug: "media-production-content-studio" },
+                { name: "Performance Marketing", slug: "performance-marketing" },
               ].map((link) => (
                 <li key={link.slug}>
                   <Link

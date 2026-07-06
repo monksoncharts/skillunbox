@@ -14,6 +14,7 @@ export interface Course {
   overview: string;
   youWillLearn: string[];
   modules: string[];
+  requirements: string[];
   careerOpportunities: string[];
 }
 

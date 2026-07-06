@@ -36,6 +36,12 @@ export const COURSES: Course[] = [
       "Analytics, Google Search Console & Reporting",
       "Live Campaign Projects & Final Case Study"
     ],
+    requirements: [
+      "No prior marketing experience required. We start from the basics.",
+      "Basic computer and internet browsing skills.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required tools and software will be provided."
+    ],
     careerOpportunities: [
       "Digital Marketing Executive",
       "SEO Specialist",
@@ -76,6 +82,12 @@ export const COURSES: Course[] = [
       "Sound Design, Audio Syncing & SFX",
       "Commercial Projects & Working with Client Briefs",
       "Portfolio Building & Direct Client Pitching"
+    ],
+    requirements: [
+      "No prior editing experience required. We start from the basics.",
+      "Basic computer skills and familiarity with file management.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required editing software will be provided."
     ],
     careerOpportunities: [
       "Professional Video Editor",
@@ -119,6 +131,12 @@ export const COURSES: Course[] = [
       "Print & Marketing Material Setup (Flyers, Business Cards)",
       "Portfolio Building & Mockup Presentation"
     ],
+    requirements: [
+      "No prior designing experience required. We start from scratch.",
+      "Basic computer operating skills.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required design software will be provided."
+    ],
     careerOpportunities: [
       "Graphic Designer",
       "Brand Designer",
@@ -160,6 +178,12 @@ export const COURSES: Course[] = [
       "Database Integration & Schemas",
       "Live Projects, Domain Setup & Production Deployment"
     ],
+    requirements: [
+      "No prior coding experience required. We start from the fundamentals.",
+      "Basic computer operation and typing skills.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required development tools will be provided."
+    ],
     careerOpportunities: [
       "Full Stack Web Developer",
       "Front-End Developer",
@@ -199,6 +223,12 @@ export const COURSES: Course[] = [
       "Business Systems & CRM Automations",
       "AI Projects Integration & Custom GPTs",
       "Real-World Productivity Case Studies"
+    ],
+    requirements: [
+      "No prior AI or programming experience required. We start from the basics.",
+      "Basic computer and internet usage skills.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required AI tools and software will be provided."
     ],
     careerOpportunities: [
       "AI Automation Specialist",
@@ -240,12 +270,68 @@ export const COURSES: Course[] = [
       "Brand Shoots & Ad Campaigns Projects",
       "Final Content Studio Portfolio Project"
     ],
+    requirements: [
+      "No prior production experience required. We start from scratch.",
+      "Basic computer skills and an interest in creative media.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required tools and software will be provided."
+    ],
     careerOpportunities: [
       "Content Producer",
       "Production Executive",
       "Media Coordinator",
       "Creative Video Producer",
       "Studio Director Assistant"
+    ]
+  },
+  {
+    id: "performance-marketing",
+    slug: "performance-marketing",
+    title: "Performance Marketing Program",
+    instructor: "Performance Marketing Mentors",
+    provider: "Skill Unbox",
+    imageUrl: "https://res.cloudinary.com/dqaqxw8w8/image/upload/v1783330391/ChatGPT_Image_Jul_6_2026_02_20_12_PM_aqv8sn.webp",
+    badge: "New",
+    rating: 4.8,
+    ratingsCount: 210,
+    price: 4999.0,
+    originalPrice: 9999.0,
+    skills: ["Meta Ads", "Google Ads", "Lead Generation", "Analytics"],
+    overview: "Learn Performance Marketing through a practical, hands-on approach and gain the skills to create, manage, and optimize high-performing ad campaigns. Master the strategies businesses use to generate leads, increase sales, and achieve measurable growth.",
+    youWillLearn: [
+      "Performance Marketing Fundamentals",
+      "Meta Ads (Facebook & Instagram)",
+      "Google Ads",
+      "Lead Generation Strategies",
+      "Campaign Setup & Optimization",
+      "Audience Targeting & Retargeting",
+      "Conversion Tracking & Analytics",
+      "Live Projects & Practical Implementation"
+    ],
+    modules: [
+      "Introduction to Performance Marketing",
+      "Meta Ads (Facebook & Instagram)",
+      "Google Ads",
+      "Audience Targeting & Lead Generation",
+      "Campaign Setup & Optimization",
+      "Conversion Tracking & Analytics",
+      "Live Projects & Case Studies",
+      "Advanced Performance Marketing Strategies"
+    ],
+    requirements: [
+      "No prior marketing experience required. We start from the basics.",
+      "Basic computer and internet browsing skills.",
+      "A computer or laptop with internet access (Windows or macOS).",
+      "All required tools and software will be provided."
+    ],
+    careerOpportunities: [
+      "Performance Marketing Executive",
+      "Media Buyer",
+      "Meta Ads Specialist",
+      "Google Ads Specialist",
+      "Performance Marketing Manager",
+      "Lead Generation Specialist",
+      "Freelance Performance Marketer"
     ]
   }
 ];
