@@ -3,7 +3,17 @@
 import Link from "next/link";
 import { COURSES } from "../constants/courses";
 
-export default function TrendingCourses() {
+type TrendingCoursesProps = {
+  limit?: number;
+  showSeeMore?: boolean;
+};
+
+export default function TrendingCourses({
+  limit,
+  showSeeMore = false,
+}: TrendingCoursesProps) {
+  const visibleCourses = typeof limit === "number" ? COURSES.slice(0, limit) : COURSES;
+
   return (
     <section
       id="courses"
@@ -31,7 +41,7 @@ export default function TrendingCourses() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {COURSES.map((course) => (
+          {visibleCourses.map((course) => (
             <div
               key={course.id}
               className="group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 focus-within:ring-2 focus-within:ring-[#5624d0]"
@@ -134,6 +144,17 @@ export default function TrendingCourses() {
             </div>
           ))}
         </div>
+
+        {showSeeMore && (
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/courses"
+              className="inline-flex items-center justify-center rounded-full border border-[#5624d0] px-6 py-3 text-sm font-semibold text-[#5624d0] transition hover:bg-[#5624d0] hover:text-white"
+            >
+              See more
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

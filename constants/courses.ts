@@ -333,5 +333,50 @@ export const COURSES: Course[] = [
       "Lead Generation Specialist",
       "Freelance Performance Marketer"
     ]
+  },
+  {
+    id: "content-creation",
+    slug: "content-creation-mastery",
+    title: "Content Creation Mastery Program",
+    instructor: "Content Strategy Mentors",
+    provider: "Skill Unbox",
+    imageUrl: "https://res.cloudinary.com/dxcqy9bue/image/upload/v1784027534/ChatGPT_Image_Jul_14_2026_04_34_01_PM_m4qjrp.webp",
+    badge: "New",
+    rating: 4.8,
+    ratingsCount: 142,
+    price: 4999.0,
+    originalPrice: 9999.0,
+    skills: ["Personal Branding", "Content Strategy", "Script Writing", "Video Editing", "Analytics & Monetization"],
+    overview: "Master the art of creating engaging content that builds your personal brand, grows your audience, and opens career opportunities. Learn the complete content creation process—from ideation to monetization. Duration: 10 hours. Language: Hindi.",
+    youWillLearn: [
+      "Personal Branding",
+      "Content Strategy",
+      "Script Writing",
+      "Video Editing",
+      "Analytics & Monetization"
+    ],
+    modules: [
+      "Introduction to Content Creation",
+      "Niche Selection & Personal Branding",
+      "Content Ideas, Research & Planning",
+      "Hook Writing & Script Writing",
+      "Shooting & Camera Basics",
+      "Video Editing & Graphic Thumbnail Design",
+      "Content Publishing & Platform Optimization",
+      "Analytics, Growth Strategies & Monetization"
+    ],
+    requirements: [
+      "No prior content creation experience required. We start from the basics.",
+      "Basic computer and smartphone usage skills.",
+      "A smartphone or camera, and a computer/laptop with internet access.",
+      "All required tools, software, and learning resources will be provided."
+    ],
+    careerOpportunities: [
+      "Content Creator",
+      "UGC Creator",
+      "Social Media Manager",
+      "Video Content Creator",
+      "Content Strategist"
+    ]
   }
 ];

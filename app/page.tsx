@@ -18,7 +18,7 @@ export default function Home() {
         <HeroSection />
         
         {/* Job-Oriented Courses */}
-        <TrendingCourses />
+        <TrendingCourses limit={8} showSeeMore />
         
         {/* Why Skill Unbox & What We Do */}
         <WhyChooseUs />
